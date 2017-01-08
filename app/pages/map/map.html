@@ -1,0 +1,57 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Radar</ion-title>
+</ion-navbar>
+
+<ion-content class="map-page">
+
+  <div *ngIf="isAlarmRunning === true">
+    <ion-card id="alarmer-infocard">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="medical" item-left></ion-icon>
+          Alarmierte Personen
+          <ion-badge item-right>{{personsInAlarmRange}}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="help-buoy" item-left></ion-icon>
+          Helfer unterwegs
+          <ion-badge item-right>{{personsConfirmed}}</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+
+  <div *ngIf="isConfirmActive === true">
+    <ion-card id="confirmer-infocard">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="help-buoy" item-left></ion-icon>
+          Als Helfer aktiv
+          <ion-badge item-right>{{distanceToAlarmer}}m</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="medical" item-left></ion-icon>
+          {{addressOfAlarmer}}
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+
+  <radar [currentLocation]="currentLocation" [nearbyList]="nearbyList" [initialLocation]="initialLocation" [initialNearbyList]="initialNearbyList"></radar>
+
+  <div *ngIf="!isAlarmRunning && !isConfirmActive">
+    <button (click)="presentAlarmActionSheet()" id="alarm-button" fab fab-center fab-bottom>
+      <ion-icon name="alert"></ion-icon>
+    </button>
+  </div>
+
+  <div *ngIf="isAlarmRunning === true">
+    <button (click)="stopAlarm()" id="alarm-stop-button" fab fab-center fab-bottom dark>
+      <ion-icon name="remove-circle"></ion-icon>
+    </button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,35 @@
+{
+  "name": "Android-Toast",
+  "description": "An HTML5 replication of the Native Android Toast",
+  "homepage": "https://github.com/jadjoubran/Android-Toast",
+  "authors": [
+    "jadjoubran <jad@jadjoubran.com>"
+  ],
+  "main": [
+    "dist/android_toast.min.js",
+    "dist/android_toast.min.css"
+  ],
+  "keywords": [
+    "android",
+    "toast",
+    "mobile"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "3740b529ec",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3740b529ec8228787d0d7dfe37ae6db638cf1b18"
+  },
+  "_source": "git://github.com/jadjoubran/Android-Toast.git",
+  "_target": "*",
+  "_originalSource": "android-toast",
+  "_direct": true
+}
