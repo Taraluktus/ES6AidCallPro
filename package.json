@@ -45,7 +45,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babelify": "^7.2.0",
     "del": "^2.2.0",
-    "eslint": "^2.6.0",
+    "eslint": "^7.4.0",
     "eslint-config-google": "^0.4.0",
     "gulp": "3.9.1",
     "gulp-watch": "4.3.5",
